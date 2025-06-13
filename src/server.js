@@ -4,7 +4,7 @@ import path, { dirname } from "path";
 import authRoutes from "./routes/authRoute.js";
 import userRoutes from "./routes/userRoute.js";
 import toDoRoutes from "./routes/todoRoute.js";
-import authMiddleware from "./middleware/authMiddleWare.js";
+import authMiddleware from "./middleware/authMiddleware.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -24,5 +24,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });
