@@ -17,6 +17,10 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
+
+# Run database migrations
+RUN npx prisma migrate deploy
+
 # Expose the port that the app runs on
 EXPOSE 5003
 
