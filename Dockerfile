@@ -15,7 +15,7 @@ COPY . .
 
 
 # Generate Prisma client
-RUN npx prisma generate --no-engine
+RUN npx prisma generate
 
 # Expose the port that the app runs on
 EXPOSE 5003
