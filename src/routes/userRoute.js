@@ -12,17 +12,16 @@ router.get("/", async (req, res) => {
       select: {
         id: true,
         username: true,
-        email: true,
-        createdAt: true,
       },
     });
-    // Remove password from user data
-    users.forEach((user) => {
-      delete user.password;
-    });
-    res.status(200).json({ users: users });
+
+    res.status(200).json({ users });
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch users." });
+    console.error("Error fetching users:", error.message);
+    res.status(500).json({
+      error: "Failed to fetch users.",
+      detail: error.message,
+    });
   }
 });
 
